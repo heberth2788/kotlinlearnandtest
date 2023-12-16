@@ -18,6 +18,20 @@ fun main() {
 //        println("i = $i")
 //    }
 
-    val assessment1 = Assessment()
-    assessment1.forInAssessment()
+    val assess1 = Assessment()
+    assess1.forInDoesNotAllowToChangePivot()
+    assess1.forInToDisplayNumbers()
+    assess1.listIteratorAndSet()
+    assess1.usingHigherOrderFunction()
+    assess1.loopUsingRange()
+    assess1.tryingAsWithQuestionMark()
+    assess1.tryingDoubleDotsOperator()
+    assess1.tryingTriplesQuotes()
+    assess1.testFibonacciSequence()
+    assess1.tryingExtensionFunction()
+    assess1.tryingSequenceYieldAll()
+    assess1.tryingPrintlnWithInterpolation()
+    assess1.testingAnyClass()
+
+//    Assessment.staticTestPivotMethod()
 }
