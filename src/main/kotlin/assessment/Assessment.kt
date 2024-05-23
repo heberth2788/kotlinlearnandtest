@@ -9,6 +9,7 @@ class Assessment {
      * Answer: Because "y" is an implicit immutable value. E.g: "val y: Int"
      * */
     fun forInDoesNotAllowToChangePivot() {
+        println("\nforInDoesNotAllowToChangePivot")
         for(y in 1..100) {
             print("$y ")
         }
@@ -25,13 +26,13 @@ class Assessment {
     // val internalObjC = InternalClass() // This gives an error
 
     /**
-     * Question 3: How do you fill in the blank below to display all of the even numbers from 1 to 10 with
-     *              the least amount of code.
+     * Question 3: How do you fill in the blank below to display all of the even
+     *              numbers from 1 to 10 with the least amount of code?
      *
      * Answer: for(count in 1..10) println("There are $count butterflies.")
      * */
     fun forInToDisplayNumbers() {
-        println("\n")
+        println("\n\nforInToDisplayNumbers")
         for(count in 1..10) {
             println("There are $count butterflies.")
         }
@@ -44,7 +45,7 @@ class Assessment {
      * Answer: .set() , previous .next() of a ListIterator or MutableListIterator
      * */
     fun listIteratorAndSet() {
-        println()
+        println("\nlistIteratorAndSet")
         val listA: MutableList<Int> = mutableListOf(1, 2, 3, 4, 5, 6, 7)
         println(listA)
 
@@ -79,7 +80,8 @@ class Assessment {
     /**
      * Question 5: What is a higher-order function in kotlin?
      *
-     * Answer: A higher-order function is a function that takes a function as a parameter, or return a function
+     * Answer: A higher-order function is a function that takes a function as
+     *          a parameter, or return a function.
      * */
     fun <T, R> Collection<T>.fold(
         initial: R,
@@ -93,7 +95,7 @@ class Assessment {
     }
 
     fun usingHigherOrderFunction() {
-        println("\n")
+        println("\n\nusingHigherOrderFunction")
         val myList = listOf(1, 2, 3, 4, 5, 6)
         val value = myList.fold(initial = 0) { acc, i ->
             val result = acc + i
@@ -109,7 +111,7 @@ class Assessment {
      * Answer: for(z in 1..6) print("$z ")
      * */
     fun loopUsingRange() {
-        println()
+        println("\nloopUsingRange")
         for(z in 1..6) print("$z ")
     }
 
@@ -121,7 +123,7 @@ class Assessment {
      * Answer: as?
      * */
     fun tryingAsWithQuestionMark() {
-        println("\n")
+        println("\n\ntryingAsWithQuestionMark")
         val auxStr: Any = 123
         val aux = auxStr as? Int
         print(aux)
@@ -134,7 +136,7 @@ class Assessment {
      * Answer: .rangeTo()
      * */
     fun tryingDoubleDotsOperator() {
-        println()
+        println("\n\ntryingDoubleDotsOperator")
         val rangeAux: IntRange = 1..6
         for(x in rangeAux) {
             print("$x ")
@@ -155,7 +157,7 @@ class Assessment {
      * Answer: """ (Triples quotes)
      * */
     fun tryingTriplesQuotes() {
-        println()
+        println("\n\ntryingTriplesQuotes")
         val strAux = """ 
              This is my
              new string
@@ -184,6 +186,7 @@ class Assessment {
     }
 
     fun testFibonacciSequence() {
+        println("\ntestFibonacciSequence")
         val fibSeq = fibonacci().take(6)
         println(fibSeq.toList())
     }
@@ -195,7 +198,7 @@ class Assessment {
      * Answer: this
      * */
     fun tryingExtensionFunction() { // Principal function that contains a nested function
-        println()
+        println("\ntryingExtensionFunction")
         /**
          * Extension function
          * */
@@ -216,7 +219,7 @@ class Assessment {
      * Answer: To produce results, a sequence must have a terminal operation, like .toList()
      * */
     fun tryingSequenceYieldAll() {
-        println()
+        println("\n\ntryingSequenceYieldAll")
         val seq = sequence {
                 yieldAll(1..20)
         }.filter { it < 11 }
@@ -231,7 +234,7 @@ class Assessment {
      * Answer: Use "string template" (Also called as "string interpolation")
      * */
     fun tryingPrintlnWithInterpolation() {
-        println()
+        println("\n\ntryingPrintlnWithInterpolation")
         val name: String = "Amos"
         val grade: Float = 95.5f
         println("My name is " + name + ". I scored " + grade + " points on the last coding quiz.") // DOES NOT recommend
@@ -244,7 +247,7 @@ class Assessment {
      * Answer: Any (As Object in Java)
      * */
     fun testingAnyClass(): Unit { // "Unit" is in Kotlin as "void" is in Java.
-        println()
+        println("\ntestingAnyClass")
         val aux: Any = 123
         val myInt = aux as? Int // "as?" will return null is it cannot cast
         println(myInt)
@@ -262,7 +265,7 @@ class Assessment {
         val SIZE = "Large"
 
         fun staticTestPivotMethod() {
-            println()
+            println("\n\nstaticTestPivotMethod")
             val sum = generateSequence(seed = 1) { // Starting value
                 it + 3      // nextFunction
             }.take(3)    // 3 times: pos0 -> 1, pos1 -> (1 + 3) = 4, pos2 -> (4 + 3) = 7
@@ -270,7 +273,73 @@ class Assessment {
             println(sum)
         }
     }
+
+    /**
+     * Using generics in functions
+     */
+    fun functionWithGenerics() {
+        /**
+         * Function with generics
+         */
+        fun <T1, T2> ifNotNull(
+            value1: T1,
+            value2: T2,
+            doSomething: (T1, T2) -> Unit,
+        ) {
+            if(value1 != null && value2 != null)
+                doSomething(value1, value2)
+            else
+                println("One or both values are null")
+        }
+
+        val valueA: String? = "HD"
+        val valueB: String? = "LM"
+        ifNotNull(valueA, valueB) {
+            valueA, valueB -> print("Both values are not null : $valueA , $valueB")
+        }
+    }
+
+    /**
+     * Using Set data structure
+     */
+    fun getDuplicatedStrings(
+        list1: List<String>,
+        list2: List<String>,
+    ): List<String> {
+        val list1Set = list1.toMutableSet()
+        val result: MutableList<String> = mutableListOf()
+        list2.forEach {
+            if(!list1Set.add(it)) {
+                result.add(it)
+            }
+        }
+        return result.toList()
+    }
+
+    /**
+    * Using Map data structure
+    **/
+    fun getMostRepeatedChar(str: String) : Char {
+        val sortedStr = str.toCharArray().sorted()
+        val dataStruct = mutableMapOf<Char, Int>()
+
+        var cont = 0
+        var charRet = ' '
+
+        var i = 0
+        while(i < sortedStr.size) {
+            dataStruct.put(sortedStr[i], (dataStruct.getOrDefault(sortedStr[i], 0) as Int) + 1)
+            if((dataStruct.get(sortedStr[i]) as Int) > cont) {
+                cont = (dataStruct.get(sortedStr[i]) as Int)
+                charRet = sortedStr[i]
+            }
+            i++
+        }
+        return charRet
+    }
 }
+
+
 
 
 
