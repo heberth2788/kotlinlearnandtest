@@ -10,7 +10,7 @@ package com.bbs.assessment
  * (That's why is 'sealed')
  */
 sealed class MySealedClass(val birthYear: Int)
-class Heberth(val name: String): MySealedClass(birthYear = 1988)
-class Lilian(val name: String, val birthY: Int): MySealedClass(birthYear = birthY)
-object Joicy: MySealedClass(2016) // Similar to values of an Enum class
-object Heily: MySealedClass(20090) // Similar to values of an Enum class
+class Heberth(val name: String) : MySealedClass(birthYear = 1988)
+class Lilian(val name: String, birthY: Int) : MySealedClass(birthYear = birthY)
+object Joicy : MySealedClass(birthYear = 2016) // Similar to values of an Enum class
+object Heily : MySealedClass(birthYear = 2009) // Similar to values of an Enum class

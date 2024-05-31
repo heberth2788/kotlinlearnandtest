@@ -309,7 +309,7 @@ class Assessment {
         val list1Set = list1.toMutableSet()
         val result: MutableList<String> = mutableListOf()
         list2.forEach {
-            if(!list1Set.add(it)) {
+            if (!list1Set.add(it)) {
                 result.add(it)
             }
         }
@@ -327,9 +327,9 @@ class Assessment {
         var charRet = ' '
 
         var i = 0
-        while(i < sortedStr.size) {
-            dataStruct.put(sortedStr[i], (dataStruct.getOrDefault(sortedStr[i], 0) as Int) + 1)
-            if((dataStruct.get(sortedStr[i]) as Int) > cont) {
+        while (i < sortedStr.size) {
+            dataStruct[sortedStr[i]] = (dataStruct.getOrDefault(sortedStr[i], 0) as Int) + 1
+            if ((dataStruct[sortedStr[i]] as Int) > cont) {
                 cont = (dataStruct.get(sortedStr[i]) as Int)
                 charRet = sortedStr[i]
             }
@@ -339,7 +339,7 @@ class Assessment {
     }
 }
 
-
+class Deivor : MySealedClass(birthYear = 2024)
 
 
 
