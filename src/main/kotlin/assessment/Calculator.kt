@@ -3,7 +3,7 @@ package com.bbs.assessment
 /**
  * Example of using Generics
  */
-class Calculator<T> {
+class Calculator {
 
     fun calculate(a: Int, b: Int, operation: String): String {
         when(operation) {
