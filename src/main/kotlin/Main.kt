@@ -1,6 +1,8 @@
 package com.bbs
 
+import com.bbs.assessment.Assessment
 import com.bbs.assessment.Encora
+import com.bbs.assessment.findCommonStrings
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 
@@ -8,8 +10,14 @@ import kotlinx.coroutines.runBlocking
 // then press <shortcut raw="ENTER"/>. You can now see whitespace characters in your code.
 fun main() = runBlocking {
 
-    val encora = Encora()
-    encora.doSomething()
+    val list1 = listOf("a", "b", "c")
+    val list2 = listOf("b", "c", "d")
+
+    val res = findCommonStrings(list1, list2)
+    println(res)
+
+    /*val encora = Encora()
+    encora.doSomething()*/
 
     /*val assessment = Assessment()
     assessment.functionWithGenerics()*/

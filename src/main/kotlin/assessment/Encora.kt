@@ -53,6 +53,13 @@ abstract class EncoraArray<T> {
     }
 }
 
+fun findCommonStrings(
+    list1: List<String>,
+    list2: List<String>,
+): List<String> {
+    return list1.filter { it in list2 }
+}
+
 
 
 

@@ -1,8 +1,44 @@
 package com.bbs.assessment
 
 import com.bbs.internalpackage.InternalClass
+import kotlin.reflect.KProperty
 
 class Assessment {
+
+    /***
+     * Use of val and lazy
+     */
+    val myVal: Int = 1988
+    val myLazyVal: Int by lazy { 1988 }
+
+    /***
+     * Use of var and lateinit
+     */
+    var myVar: Int = 1988
+    lateinit var myLateinitVar: Any // "lateinit" is not allowed for primitive types as: Int, Double, etc
+
+    /**
+     * Use of "by"(provided by)
+     */
+    internal class ByExample {
+        val myVar: String by MyDelegate()
+    }
+    internal class MyDelegate {
+        operator fun getValue(
+            byExample: ByExample,
+            property: KProperty<*>,
+        ): String {
+            return "$byExample: delegating the property ${ property.name }"
+        }
+        operator fun setValue(
+            byExample: ByExample,
+            property: KProperty<*>,
+            newValue: String,
+        ) {
+            println("$byExample: $newValue has been assigned to ${ property.name }")
+        }
+    }
+
     /**
      * Question 1: Why the compiler not allow the value of "y" to change?
      *
@@ -29,11 +65,12 @@ class Assessment {
      * Question 3: How do you fill in the blank below to display all of the even
      *              numbers from 1 to 10 with the least amount of code?
      *
-     * Answer: for(count in 1..10) println("There are $count butterflies.")
+     * Answer: Using the "rangeTo" operator or ".."(double dots)
+     *          for(count in 1..10) println("There are $count butterflies.")
      * */
     fun forInToDisplayNumbers() {
         println("\n\nforInToDisplayNumbers")
-        for(count in 1..10) {
+        for(count in 1 .. 10) { // for(count in 1.rangeTo(10)) {
             println("There are $count butterflies.")
         }
     }
@@ -125,7 +162,7 @@ class Assessment {
     fun tryingAsWithQuestionMark() {
         println("\n\ntryingAsWithQuestionMark")
         val auxStr: Any = 123
-        val aux = auxStr as? Int
+        val aux: Int? = auxStr as? Int
         print(aux)
     }
 
@@ -187,7 +224,7 @@ class Assessment {
 
     fun testFibonacciSequence() {
         println("\ntestFibonacciSequence")
-        val fibSeq = fibonacci().take(6)
+        val fibSeq = fibonacci().take(9)
         println(fibSeq.toList())
     }
 
@@ -309,7 +346,7 @@ class Assessment {
         val list1Set = list1.toMutableSet()
         val result: MutableList<String> = mutableListOf()
         list2.forEach {
-            if (!list1Set.add(it)) {
+            if (!list1Set.add(it)) { // If the element exist
                 result.add(it)
             }
         }
@@ -330,7 +367,7 @@ class Assessment {
         while (i < sortedStr.size) {
             dataStruct[sortedStr[i]] = (dataStruct.getOrDefault(sortedStr[i], 0) as Int) + 1
             if ((dataStruct[sortedStr[i]] as Int) > cont) {
-                cont = (dataStruct.get(sortedStr[i]) as Int)
+                cont = (dataStruct[sortedStr[i]] as Int)
                 charRet = sortedStr[i]
             }
             i++
