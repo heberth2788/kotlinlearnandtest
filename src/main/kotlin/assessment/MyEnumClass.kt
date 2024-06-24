@@ -45,7 +45,6 @@ enum class MyEnumClass(
 
 /**
  *  An enum class has by default properties as : 'name' and 'ordinal'
- *  An enum class has by default methods as :
  */
 fun testMyEnumClass() {
     val joicy = MyEnumClass.JOICY

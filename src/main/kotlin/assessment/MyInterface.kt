@@ -10,7 +10,7 @@ package com.bbs.assessment
  *
  * Many restaurants can 'implement' the same interface.
  */
-interface Interfaces {
+interface MyInterface {
     val speed: Int
         get() = 0
     val maxSpeed: Int

@@ -62,7 +62,7 @@ class Assessment {
     // val internalObjC = InternalClass() // This gives an error
 
     /**
-     * Question 3: How do you fill in the blank below to display all of the even
+     * Question 3: How do you fill in the blank below to display all of them even
      *              numbers from 1 to 10 with the least amount of code?
      *
      * Answer: Using the "rangeTo" operator or ".."(double dots)
@@ -339,7 +339,7 @@ class Assessment {
     /**
      * Using Set data structure
      */
-    fun getDuplicatedStrings(
+    fun getDuplicatedStringsUsingSet(
         list1: List<String>,
         list2: List<String>,
     ): List<String> {
@@ -351,6 +351,16 @@ class Assessment {
             }
         }
         return result.toList()
+    }
+
+    /**
+     * Using List data structure with filter operator
+     */
+    fun getDuplicatedStringsUsingList(
+        list1: List<String>,
+        list2: List<String>,
+    ): List<String> {
+        return list1.filter { it in list2 }
     }
 
     /**
@@ -373,6 +383,17 @@ class Assessment {
             i++
         }
         return charRet
+    }
+
+    /**
+     * Using Pair and Triple
+     */
+    fun usingPairAndTriple() {
+        val myPair: Pair<String, Int> = "Heberth" to 35
+        val (name, yearsOld) = myPair
+
+        val myTriple: Triple<String, Int, Char> = Triple("Heberth", 35, 'H')
+        val (name2, yearsOld2, initialChar) = myTriple
     }
 }
 

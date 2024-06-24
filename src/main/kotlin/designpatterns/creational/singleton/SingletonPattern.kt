@@ -3,6 +3,8 @@ package com.bbs.designpatterns.creational.singleton
 /***
  * Ensure that a class has only one instance
  * and provide global access point to this instance
+ *
+ * Utility : object to access to the database, or web services.
  */
 
 /**
@@ -10,6 +12,14 @@ package com.bbs.designpatterns.creational.singleton
  */
 object SingletonPattern {
     var attr1: String = ""
+
+    // The "init" method will execute after the main constructor,
+    // so in this case the "object" declaration
+    // don't allow to have the main constructor
+    init {
+        attr1 = "I'm the attribute 1"
+    }
+
     fun doSomething() {
         println("My attr1 = $attr1")
     }
@@ -20,6 +30,7 @@ object SingletonPattern {
  */
 class SingletonPatternUsingCompanionObject private constructor() {
     var attr1: String = ""
+
     fun doSomething() {
         println("My attr1 = $attr1")
     }

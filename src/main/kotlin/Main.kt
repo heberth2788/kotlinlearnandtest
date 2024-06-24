@@ -1,20 +1,15 @@
 package com.bbs
 
-import com.bbs.assessment.Assessment
-import com.bbs.assessment.Encora
-import com.bbs.assessment.findCommonStrings
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
+import com.bbs.assessment.Assessment
+import com.bbs.designpatterns.creational.singleton.useSingleton
 
 //TIP Press <shortcut raw="SHIFT"/> twice to open the Search Everywhere dialog and type <b>show whitespaces</b>,
 // then press <shortcut raw="ENTER"/>. You can now see whitespace characters in your code.
 fun main() = runBlocking {
 
-    val list1 = listOf("a", "b", "c")
-    val list2 = listOf("b", "c", "d")
-
-    val res = findCommonStrings(list1, list2)
-    println(res)
+   useSingleton()
 
     /*val encora = Encora()
     encora.doSomething()*/
@@ -84,6 +79,9 @@ fun main() = runBlocking {
     mySnippet.testingSequence(quantity = 9, seed = 1)*/
 }
 
+fun test() {
+
+}
 
 suspend fun doSomethingUsefulOne(): Int {
     delay(2000L) // pretend we are doing something useful here
