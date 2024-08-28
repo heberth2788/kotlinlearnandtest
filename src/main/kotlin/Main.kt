@@ -11,6 +11,14 @@ fun main() = runBlocking {
 
    useSingleton()
 
+    val mySnippet = Snippet(
+        notNullAttribute = 1988,
+        //nullAttribute = null,
+    )
+
+    println(mySnippet.nullAttribute)
+
+
     /*val encora = Encora()
     encora.doSomething()*/
 

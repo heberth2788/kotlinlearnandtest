@@ -1,6 +1,10 @@
 package com.bbs
 
-class Snippet {
+class Snippet(
+    val notNullAttribute: Int,
+    val nullAttribute: Int? = null,
+) {
+
     fun testingList(size: Int = 3) {
         println("\ntestingList")
         val myList = List(size) { it * 3 }
@@ -15,6 +19,4 @@ class Snippet {
         }.take(quantity)
         println(seq.toList())
     }
-
-
 }
