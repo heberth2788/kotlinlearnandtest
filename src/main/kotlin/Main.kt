@@ -18,7 +18,6 @@ fun main() = runBlocking {
 
     println(mySnippet.nullAttribute)
 
-
     /*val encora = Encora()
     encora.doSomething()*/
 
