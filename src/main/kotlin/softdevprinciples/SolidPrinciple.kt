@@ -7,13 +7,13 @@ package com.bbs.softdevprinciples
  * I: Interface Segregation Principle (ISP)
  * D: Dependency Inversion Principle (DIP)
  */
-sealed class Solid(shortName: String) {
+sealed class SolidPrinciple(shortName: String) {
 
     /**
      * A class should have only one reason to change.
      * It should have one and only one responsibility.
      */
-    class SingleResponsability: Solid(shortName = "SRP") {
+    class SingleResponsability: SolidPrinciple(shortName = "SRP") {
 
         // Bad Example: Multiple Responsibilities
         class UserA {
@@ -38,7 +38,7 @@ sealed class Solid(shortName: String) {
      * Software entities (classes, modules, etc.)
      * should be open for extension but closed for modification
      */
-    class OpenClose: Solid(shortName = "OCP") {
+    class OpenClose: SolidPrinciple(shortName = "OCP") {
 
         // Bad Example: Modification required for new shapes
         class AreaCalculatorA {
@@ -63,17 +63,17 @@ sealed class Solid(shortName: String) {
             fun calculateArea(shape: Shape): Double {
                 return shape.calculateArea()
             }
-        }
 
-        interface Shape {
-            fun calculateArea(): Double
-        }
+            interface Shape {
+                fun calculateArea(): Double
+            }
 
-        class Rectangle(val width: Double, val height: Double) : Shape {
-            override fun calculateArea(): Double = width * height
-        }
-        class Circle(val radius: Double) : Shape {
-            override fun calculateArea(): Double = 3.14 * radius * radius
+            class Rectangle(val width: Double, val height: Double) : Shape {
+                override fun calculateArea(): Double = width * height
+            }
+            class Circle(val radius: Double) : Shape {
+                override fun calculateArea(): Double = 3.14 * radius * radius
+            }
         }
     }
 
@@ -81,7 +81,7 @@ sealed class Solid(shortName: String) {
      * Subtypes should be substitutable for their base types
      * without altering the correctness of the program.
      */
-    class LiskovSubstitution: Solid(shortName = "LSP") {
+    class LiskovSubstitution: SolidPrinciple(shortName = "LSP") {
 
         // Bad Example: Violation of LSP
         open class BirdA {
@@ -113,7 +113,7 @@ sealed class Solid(shortName: String) {
      * Clients should not be forced to depend on methods they don't use.
      * Interfaces should be small and specific.
      */
-    class InterfaceSegregation: Solid(shortName = "ISP") {
+    class InterfaceSegregation: SolidPrinciple(shortName = "ISP") {
 
         // Bad Example: Fat Interface
         interface Worker {
@@ -138,7 +138,9 @@ sealed class Solid(shortName: String) {
         class Human : Workable, Eatable, Sleepable {
             // ... implementations
             override fun work() { }
+
             override fun eat() { }
+
             override fun sleep() { }
         }
 
@@ -152,7 +154,7 @@ sealed class Solid(shortName: String) {
      * High-level modules should not depend on low-level modules.
      * Both should depend on abstractions
      */
-    class DependencyInversion: Solid(shortName = "DIP") {
+    class DependencyInversion: SolidPrinciple(shortName = "DIP") {
 
         // Bad Example: High-level depends on low-level
         class LightA {
