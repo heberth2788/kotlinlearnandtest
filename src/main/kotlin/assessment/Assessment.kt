@@ -15,7 +15,7 @@ class Assessment {
      * Use of var and lateinit
      */
     var myVar: Int = 1988
-    lateinit var myLateinitVar: Any // "lateinit" is not allowed for primitive types as: Int, Double, etc
+    lateinit var myLateinitVar: Any // "lateinit" is not allowed for primitive types as: Int, Double, etc.
 
     /**
      * Use of "by"(provided by)
@@ -396,9 +396,3 @@ class Assessment {
         val (name2, yearsOld2, initialChar) = myTriple
     }
 }
-
-class Deivor : MySealedClass(birthYear = 2024)
-
-
-
-

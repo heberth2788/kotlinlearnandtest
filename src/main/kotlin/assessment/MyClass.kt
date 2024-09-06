@@ -30,6 +30,9 @@ abstract class MyArray<T> {
     }
 }
 
+class MyIntArray: MyArray<Int>()
+class MyDoubleArray: MyArray<Double>()
+
 class MyClass {
 
     private val myIntArray = MyIntArray()
@@ -50,12 +53,3 @@ class MyClass {
         println(myDoubleArray.toString())
     }
 }
-
-class MyIntArray: MyArray<Int>()
-class MyDoubleArray: MyArray<Double>()
-
-
-
-
-
-
