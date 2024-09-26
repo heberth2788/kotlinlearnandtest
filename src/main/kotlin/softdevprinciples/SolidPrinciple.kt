@@ -156,7 +156,7 @@ sealed class SolidPrinciple(shortName: String) {
      */
     class DependencyInversion: SolidPrinciple(shortName = "DIP") {
 
-        // Bad Example: High-level depends on low-level
+        // Bad Example: High-level depends on low level
         class LightA {
             fun turnOn() { /* ... */ }
         }

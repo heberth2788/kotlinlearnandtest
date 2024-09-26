@@ -40,7 +40,7 @@ class Assessment {
     }
 
     /**
-     * Question 1: Why the compiler not allow the value of "y" to change?
+     * Question 1: Why the compiler not allows the value of "y" to change?
      *
      * Answer: Because "y" is an implicit immutable value. E.g: "val y: Int"
      * */

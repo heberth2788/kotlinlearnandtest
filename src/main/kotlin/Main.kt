@@ -9,14 +9,10 @@ import com.bbs.designpatterns.creational.singleton.useSingleton
 // then press <shortcut raw="ENTER"/>. You can now see whitespace characters in your code.
 fun main() = runBlocking {
 
-   useSingleton()
+    val myNumber: String = "**** **** **** 1234"
+    println(myNumber.substring(20))
 
-    val mySnippet = Snippet(
-        notNullAttribute = 1988,
-        //nullAttribute = null,
-    )
-
-    println(mySnippet.nullAttribute)
+   //useSingleton()
 
     /*val encora = Encora()
     encora.doSomething()*/
