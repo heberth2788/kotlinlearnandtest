@@ -6,7 +6,7 @@ package com.bbs.assessment
  * restaurant.
  *
  * So the 'menu' is an 'interface' between the
- * 'restaurant' and the 'client' and viceversa.
+ * 'restaurant' and the 'client' and vice versa.
  *
  * Many restaurants can 'implement' the same interface.
  */

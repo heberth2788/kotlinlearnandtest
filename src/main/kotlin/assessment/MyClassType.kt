@@ -1,6 +1,25 @@
 package com.bbs.assessment
 
-class MyClassType {
+class MyClassType(
+    val isSelected: Boolean = false,
+) {
+
+    var myVar: MyClassTypeA? = null
+
+    fun testMyVar() {
+        println("testMyVar")
+        myVar ?: return
+        println("testMyVar - not null")
+    }
+
+    private val miNum: Int
+        get() {
+            return if(true) {
+                45
+            } else {
+                35
+            }
+        }
 
     class MyClassTypeA(
         val name: String, // get
