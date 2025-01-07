@@ -386,6 +386,27 @@ class Assessment {
     }
 
     /**
+     * Using Set and Map data structures
+     */
+    fun exampleOfSetAndMap() {
+        val mySet: Set<Int> = setOf(1, 2, 3)
+        val myMutSet: MutableSet<Int> = mySet.toMutableSet()
+        myMutSet.add(4)
+        myMutSet.size
+        myMutSet.remove(1)
+        myMutSet.clear()
+
+        val myMap: Map<Char, Int> = mapOf('h' to 1, 'd' to 2, 'v' to 3)
+        val myMutMap: MutableMap<Char, Int> = myMap.toMutableMap()
+        myMutMap.put('j', 4)
+        myMutMap['h'] = 5
+        myMutMap.keys
+        myMutMap.values
+        myMutMap.remove('h')
+        myMutMap.clear()
+    }
+
+    /**
      * Using Pair and Triple
      */
     fun usingPairAndTriple() {

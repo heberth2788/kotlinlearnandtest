@@ -26,3 +26,5 @@ replay_pid*
 # Custom - HD
 *.lock
 *.bin
+.gradle/
+build/

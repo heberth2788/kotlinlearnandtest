@@ -11,36 +11,42 @@ enum class MyEnumClass(
 ) {
 
     HEBERTH(birthYear = 1988) {
+
         override fun fetchName(): String {
             return "HD"
         }
     },
 
     LILIAN(birthYear = 1987) {
+
         override fun fetchName(): String {
             return "LM"
         }
     },
 
     BERTHLY(birthYear = 2024) {
+
         override fun fetchName(): String {
             return "BD"
         }
     },
 
     JOICY(birthYear = 2016) {
+
         override fun fetchName(): String {
             return "JD"
         }
     },
 
     HEILY(birthYear = 2009) {
+
         override fun fetchName(): String {
             return "HDM"
         }
     };
 
     abstract fun fetchName(): String
+
     lateinit var comment: String
 
     fun calcAge(): Int {

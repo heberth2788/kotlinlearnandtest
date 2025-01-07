@@ -26,6 +26,7 @@ abstract class MyArray<T> {
     }
 
     companion object {
+
         protected const val DEFAULT_CAPACITY = 10
     }
 }
