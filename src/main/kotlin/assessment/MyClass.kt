@@ -17,7 +17,7 @@ abstract class MyArray<T> {
     }
 
     @Suppress("UNCHECKED_CAST")
-    fun getElement(i: Int): T {
+    fun <T> getElement(i: Int): T {
         return elements[i] as T
     }
 
