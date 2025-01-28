@@ -54,3 +54,12 @@ class MyClass {
         println(myDoubleArray.toString())
     }
 }
+
+interface A {
+
+    fun a();
+
+    fun b() {
+        print("abc");
+    }
+}

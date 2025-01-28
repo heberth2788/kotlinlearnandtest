@@ -28,6 +28,7 @@ class InOutWhere {
         private var value: T,
     ) {
         fun setT(newValue: T) { value = newValue } // Good
+
         // fun getT(): T = value // Error: T is not allowed as a return type (out)
     }
 
@@ -38,6 +39,7 @@ class InOutWhere {
         private var value: T,
     ) {
         fun getT(): T = value // Good
+
         // fun setT(newValue: T) { value = newValue } // Error: T is not allowed as an input type (in)
     }
 
@@ -49,10 +51,13 @@ class InOutWhere {
         fun processInput(value: T)
         fun processOutput(): T
     }
+
     class StringProcessor: Processor<String> {
+
         override fun processInput(value: String) {
             print("Hello $value")
         }
+
         override fun processOutput(): String {
             return "HD"
         }
