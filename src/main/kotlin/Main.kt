@@ -6,6 +6,7 @@ import com.bbs.assessment.MyEnumClass
 import com.bbs.coroutine.MyCoroutineTest
 import com.bbs.operatoroverloading.ArithmeticOperator
 import com.bbs.operatoroverloading.times
+import com.bbs.assessment.MyClass
 
 //TIP Press <shortcut raw="SHIFT"/> twice to open the Search Everywhere dialog and type <b>show whitespaces</b>,
 // then press <shortcut raw="ENTER"/>. You can now see whitespace characters in your code.
@@ -13,7 +14,9 @@ fun main() { //: Unit = runBlocking {
 
 //    val myAo = ArithmeticOperator()
 //    myAo.useTimes()
-    println('h' * 3)
+//    println('h' * 3)
+
+    MyClass().forEachTest()
 
 //    myAo.useDiv()
 //    myAo.useRem()

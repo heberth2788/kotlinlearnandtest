@@ -53,13 +53,60 @@ class MyClass {
         }
         println(myDoubleArray.toString())
     }
+
+    fun forEachTest() {
+        val listA = listOf(1, 2, 3, 4, 5, 6)
+        val listB = listOf(4, 5, 6, 7, 8, 9)
+
+        println("Example 1:")
+        listA.forEach la@{ a ->
+            print("\na=$a, ")
+            listB.forEach lb@{ b->
+                print("b=$b, ")
+                if (a == b) {
+                    return@la
+                }
+            }
+        }
+        println("Finish\n")
+
+        println("Example 2:")
+        listA.forEach la@{ a ->
+            print("\na=$a, ")
+            listB.forEach lb@{ b->
+                print("b=$b, ")
+                if (a == b) {
+                    return@lb
+                }
+            }
+        }
+        println("Finish\n")
+
+        println("Example 3:")
+        listA.forEach la@{ a ->
+            print("\na=$a, ")
+            listB.forEach lb@{ b->
+                print("b=$b, ")
+                if (a == b) {
+                    println("Finish\n")
+                    return
+                }
+            }
+        }
+    }
 }
 
 interface A {
 
-    fun a();
+    fun fooBar();
 
-    fun b() {
+    fun barFoo() {
         print("abc");
+    }
+}
+
+class B : A {
+    override fun fooBar() {
+        barFoo()
     }
 }
