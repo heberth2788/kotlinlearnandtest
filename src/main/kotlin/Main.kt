@@ -7,16 +7,55 @@ import com.bbs.coroutine.MyCoroutineTest
 import com.bbs.operatoroverloading.ArithmeticOperator
 import com.bbs.operatoroverloading.times
 import com.bbs.assessment.MyClass
+import java.util.regex.Pattern
+
+fun fooBar(amount: Double): String {
+    val strAmount: String = amount.toString()
+    val parts = strAmount.split(".")
+    return if (parts[1].toDouble() == 0.0) {
+        parts[0]
+    } else {
+        strAmount
+    }
+}
+
+fun fooBar2(amount: Double): String {
+    val intPart: Int = amount.toInt()
+        val decimalPart: Double = amount - intPart
+        return if (decimalPart != 0.0) {
+            amount.toString()
+        } else {
+            intPart.toString()
+    }
+}
+
+fun fooBar3(amount: Double): String = String.format("%.2f", amount)
 
 //TIP Press <shortcut raw="SHIFT"/> twice to open the Search Everywhere dialog and type <b>show whitespaces</b>,
 // then press <shortcut raw="ENTER"/>. You can now see whitespace characters in your code.
 fun main() { //: Unit = runBlocking {
 
+    val p = Pattern.compile("a*b")
+    val m = p.matcher("b")
+    val b = m.matches()
+
+    val amount: Double = 1988.9
+    val a = fooBar3(amount)
+
+    val amountStr = String.format("%.2f", 1988.toDouble())
+
+    println(a)
+
+    val myA = listOf(1, 2, 3, 4, 5, 6)
+    for ((index, value) in myA.withIndex()) {
+        print("[$index]=$value | ")
+    }
+
 //    val myAo = ArithmeticOperator()
 //    myAo.useTimes()
 //    println('h' * 3)
 
-    MyClass().forEachTest()
+//    MyClass().forEachTest()
 
 //    myAo.useDiv()
 //    myAo.useRem()

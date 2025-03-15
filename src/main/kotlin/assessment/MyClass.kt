@@ -1,7 +1,6 @@
 package com.bbs.assessment
 
-abstract class MyArray<T> {
-
+abstract class MyArray<T: Number> {
     private var elements: Array<Any?> = arrayOfNulls(DEFAULT_CAPACITY)
     private var index = 0
 
@@ -27,7 +26,7 @@ abstract class MyArray<T> {
 
     companion object {
 
-        protected const val DEFAULT_CAPACITY = 10
+        const val DEFAULT_CAPACITY = 10
     }
 }
 
@@ -98,7 +97,9 @@ class MyClass {
 
 interface A {
 
-    fun fooBar();
+    val myValue: Int
+
+    fun fooBar()
 
     fun barFoo() {
         print("abc");
@@ -106,6 +107,9 @@ interface A {
 }
 
 class B : A {
+
+    override val myValue = 1988
+
     override fun fooBar() {
         barFoo()
     }
