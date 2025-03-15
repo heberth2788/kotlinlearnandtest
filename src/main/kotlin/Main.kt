@@ -46,10 +46,16 @@ fun main() { //: Unit = runBlocking {
 
     println(a)
 
-    val myA = listOf(1, 2, 3, 4, 5, 6)
-    for ((index, value) in myA.withIndex()) {
-        print("[$index]=$value | ")
+    println("START")
+    firstFor@ for (i in 1..9) {
+        println(i) // 1, 2, 3, 4, 5, 6, 7, 8, 9
+        for (j in 1..9) {
+            if (j == 3) continue@firstFor
+            print(j) // 1, 2
+        }
+        println()
     }
+    println("\nEND")
 
 //    val myAo = ArithmeticOperator()
 //    myAo.useTimes()

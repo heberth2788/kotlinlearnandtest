@@ -49,3 +49,72 @@ fun forWhileAndDoWhileLoops() {
         println(i--) // 6, 5, 4, 3, 2, 1
     } while (i > 0)
 }
+
+fun breakContinueReturnInLoops() {
+
+    // return
+    for (i in 1..9) {
+        if (i == 6) return // return the function
+        print(i) // 1, 2, 3, 4, 5
+    }
+
+    listOf(1, 2, 3, 4, 5, 6).forEach {
+        if (it == 3) return // return the function
+        print(it) // 1, 2
+    }
+
+    listOf(1, 2, 3, 4, 5, 6).forEach(
+        action = fun(value: Int) {
+            if (value in 2..5) return // return the internal function: fun(value: Int)
+            print(value) // 1, 6
+        }
+    )
+
+    // return using label
+    listOf(1, 2, 3, 4, 5, 6).forEach firstForEach@ {
+        if (it in 2..5) return@firstForEach // return the loop forEach
+        print(it) // 1, 6
+    }
+
+    // break
+    for (i in 1..9) {
+        if (i == 6) break // break the loop
+        print(i) // 1, 2, 3, 4, 5
+    }
+
+    for (i in 1..9) {
+        print(i) // 1, 2, 3, 4, 5, 6, 7, 8, 9
+        for (j in 1..9) {
+            if(j == 6) break // break the loop of 'j'
+            print(j) // 1, 2, 3, 4, 5
+        }
+    }
+
+    // break using label
+    firstFor@ for (i in 1..9) {
+        print(i) // 1
+        for (j in 1..9) {
+            if(j == 6) break@firstFor // break the loop of 'i'
+            print(j) // 1, 2, 3, 4, 5
+        }
+    }
+
+    // continue
+    for (i in 1..9) {
+        print(i) // 1, 2, 3, 4, 5, 6, 7, 8, 9
+        for (j in 1..9) {
+            if (j in 2..8) continue
+            print(j) // 1, 9
+        }
+    }
+
+
+    // continue with label
+    firstFor@ for (i in 1..9) {
+        print(i) // 1, 2, 3, 4, 5, 6, 7, 8, 9
+        for (j in 1..9) {
+            if (j == 3) continue@firstFor
+            print(j) // 1, 2
+        }
+    }
+}
