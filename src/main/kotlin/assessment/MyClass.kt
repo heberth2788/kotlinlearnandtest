@@ -45,7 +45,6 @@ class MyClass {
         }
         println(myIntArray.toString())
 
-
         val numDouble = 1988.3
         for(i in 0..11) {
             myDoubleArray.add(numDouble + i)
@@ -102,7 +101,7 @@ interface A {
     fun fooBar()
 
     fun barFoo() {
-        print("abc");
+        print("abc")
     }
 }
 
