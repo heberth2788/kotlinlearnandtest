@@ -23,8 +23,9 @@
 hs_err_pid*
 replay_pid*
 
-# Custom - HD
+# HD
 *.lock
 *.bin
 .gradle/
 build/
+.idea/
