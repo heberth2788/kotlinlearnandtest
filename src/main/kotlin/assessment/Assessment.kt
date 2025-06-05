@@ -364,6 +364,16 @@ class Assessment {
     }
 
     /**
+     * Using List data structure with intersect operator
+     */
+    fun getDuplicatedStringsUsingIntersect(
+        list1: List<String>,
+        list2: List<String>,
+    ): List<String> {
+        return list1.intersect(list2.toSet()).toList()
+    }
+
+    /**
     * Using Map data structure
     **/
     fun getMostRepeatedChar(str: String) : Char {
