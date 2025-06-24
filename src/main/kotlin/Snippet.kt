@@ -1,5 +1,6 @@
 package com.bbs
 
+import com.sun.jndi.toolkit.url.Uri
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -7,6 +8,10 @@ class Snippet(
     val notNullAttribute: Int,
     val nullAttribute: Int? = null,
 ) {
+
+    fun testParseStringToUri() {
+        val myUrlStr = "https://www.scotiabank.com.pe/Personas/agencias"
+    }
 
     fun testingList(size: Int = 3) {
         println("\ntestingList")

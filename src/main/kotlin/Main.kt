@@ -4,28 +4,6 @@ import com.bbs.assessment.MyEnumClass
 import kotlinx.coroutines.delay
 import java.util.regex.Pattern
 
-fun fooBar(amount: Double): String {
-    val strAmount: String = amount.toString()
-    val parts = strAmount.split(".")
-    return if (parts[1].toDouble() == 0.0) {
-        parts[0]
-    } else {
-        strAmount
-    }
-}
-
-fun fooBar2(amount: Double): String {
-    val intPart: Int = amount.toInt()
-        val decimalPart: Double = amount - intPart
-        return if (decimalPart != 0.0) {
-            amount.toString()
-        } else {
-            intPart.toString()
-    }
-}
-
-fun fooBar3(amount: Double): String = String.format("%.2f", amount)
-
 //TIP Press <shortcut raw="SHIFT"/> twice to open the Search Everywhere dialog and type <b>show whitespaces</b>,
 // then press <shortcut raw="ENTER"/>. You can now see whitespace characters in your code.
 fun main() { //: Unit = runBlocking {
@@ -77,6 +55,28 @@ fun main() { //: Unit = runBlocking {
 
 //    println("main end: ${ Thread.currentThread().name }")
 }
+
+fun fooBar(amount: Double): String {
+    val strAmount: String = amount.toString()
+    val parts = strAmount.split(".")
+    return if (parts[1].toDouble() == 0.0) {
+        parts[0]
+    } else {
+        strAmount
+    }
+}
+
+fun fooBar2(amount: Double): String {
+    val intPart: Int = amount.toInt()
+        val decimalPart: Double = amount - intPart
+        return if (decimalPart != 0.0) {
+            amount.toString()
+        } else {
+            intPart.toString()
+    }
+}
+
+fun fooBar3(amount: Double): String = String.format("%.2f", amount)
 
 fun testingWhen() {
     val myEnumObj: MyEnumClass = MyEnumClass.BERTHLY
