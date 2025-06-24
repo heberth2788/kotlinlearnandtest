@@ -1,6 +1,6 @@
 package com.bbs
 
-import com.sun.jndi.toolkit.url.Uri
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -8,6 +8,12 @@ class Snippet(
     val notNullAttribute: Int,
     val nullAttribute: Int? = null,
 ) {
+
+    //@Suppress("UNUSED_PARAMETER")
+    private fun fooBar(throwable: Throwable) {
+        if (throwable is CancellationException) return
+        println("Everything is ok...")
+    }
 
     fun testParseStringToUri() {
         val myUrlStr = "https://www.scotiabank.com.pe/Personas/agencias"
@@ -17,6 +23,7 @@ class Snippet(
         println("\ntestingList")
         val myList = List(size) { it * 3 }
         println(myList)
+        fooBar(Throwable("Throwable"))
     }
 
     fun testingSequence(seed: Int = 3, quantity: Int = 6) {
