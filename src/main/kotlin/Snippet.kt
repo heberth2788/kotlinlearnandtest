@@ -5,7 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class Snippet(
-    val notNullAttribute: Int,
+    val notNullAttribute: Int = 0,
     val nullAttribute: Int? = null,
 ) {
 
