@@ -9,6 +9,15 @@ class Snippet(
     val nullAttribute: Int? = null,
 ) {
 
+    fun testSumList(
+        intElement: Int,
+        listA: List<Int>,
+        listB: List<Int>,
+    ) {
+        val newList: List<Int> by lazy { listA + intElement + listB }
+        println(newList)
+    }
+
     //@Suppress("UNUSED_PARAMETER")
     private fun fooBar(throwable: Throwable) {
         if (throwable is CancellationException) return

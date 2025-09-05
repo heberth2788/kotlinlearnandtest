@@ -8,6 +8,9 @@ import java.util.regex.Pattern
 // then press <shortcut raw="ENTER"/>. You can now see whitespace characters in your code.
 fun main() { //: Unit = runBlocking {
 
+    val s = Snippet()
+    s.testSumList(intElement = 1988, listA = listOf(1, 2, 3), listB = listOf(4, 5, 6))
+
     val p = Pattern.compile("a*b")
     val m = p.matcher("b")
     val b = m.matches()
