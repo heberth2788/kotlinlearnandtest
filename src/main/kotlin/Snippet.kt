@@ -9,6 +9,13 @@ class Snippet(
     val nullAttribute: Int? = null,
 ) {
 
+    fun testPairsWithList(): List<Pair<String, String>> = listOf(
+        Pair("A", "B"),
+        Pair("A", "B"),
+        Pair("A", "B"),
+        Pair("A", "B"),
+    )
+
     fun testSumList(
         intElement: Int,
         listA: List<Int>,
