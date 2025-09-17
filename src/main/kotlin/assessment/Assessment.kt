@@ -385,7 +385,7 @@ class Assessment {
 
         var i = 0
         while (i < sortedStr.size) {
-            dataStruct[sortedStr[i]] = (dataStruct.getOrDefault(sortedStr[i], 0) as Int) + 1
+            dataStruct[sortedStr[i]] = dataStruct.getOrDefault(sortedStr[i], 0) + 1
             if ((dataStruct[sortedStr[i]] as Int) > cont) {
                 cont = (dataStruct[sortedStr[i]] as Int)
                 charRet = sortedStr[i]
