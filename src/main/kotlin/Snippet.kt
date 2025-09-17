@@ -3,6 +3,7 @@ package com.bbs
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import java.net.URI
 
 class Snippet(
     val notNullAttribute: Int = 0,
@@ -32,7 +33,8 @@ class Snippet(
     }
 
     fun testParseStringToUri() {
-        val myUrlStr = "https://www.scotiabank.com.pe/Personas/agencias"
+        val myUrlStr: String = "https://www.scotiabank.com.pe/Personas/agencias"
+        val myUri: URI = URI.create(myUrlStr)
     }
 
     fun testingList(size: Int = 3) {
