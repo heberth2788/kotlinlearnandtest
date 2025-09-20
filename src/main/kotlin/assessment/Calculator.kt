@@ -5,12 +5,12 @@ package com.bbs.assessment
  */
 class Calculator {
 
-    fun calculate(a: Int, b: Int, operation: String): String {
-        when(operation) {
-            "add" -> return calc(a, b, ::add).toString()
-            "sub" -> return calc(a, b, ::sub).toString()
+    fun calculate(a: Int, b: Int, operation: String): Int {
+        return when(operation) {
+            "add" -> calc(a, b, ::add)
+            "sub" -> calc(a, b, ::sub)
             else -> {
-                return "Something went wrong"
+                throw IllegalArgumentException("Invalid operation")
             }
         }
     }
@@ -21,5 +21,12 @@ class Calculator {
     }
 
     private fun add(a: Int, b: Int): Int = a + b
+
     private fun sub(a: Int, b: Int): Int = a - b
+
+    fun parse(str: String): Int {
+        val (a, op, b) = str.split(" ")
+
+        return calculate(a.toInt(), b.toInt(), op)
+    }
 }
