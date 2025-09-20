@@ -1,5 +1,6 @@
 package com.bbs
 
+import com.bbs.assessment.InterviewQuestions
 import com.bbs.assessment.MyEnumClass
 import kotlinx.coroutines.delay
 import java.util.regex.Pattern
@@ -8,7 +9,22 @@ import java.util.regex.Pattern
 // then press <shortcut raw="ENTER"/>. You can now see whitespace characters in your code.
 fun main() { //: Unit = runBlocking {
 
-    val s = Snippet()
+//    val rpta: Boolean = InterviewQuestions.isAnagramV2("anagram", "magranaa")
+//    println("\nAnagram ? : $rpta")
+
+//    val mrc: Char = InterviewQuestions.getMostRepeatedChar("ddaanrooi")
+//    println("\nThe most repeated character ? : $mrc")
+
+//    val rov: String = InterviewQuestions.reserverOnlyVowelsV2("androIde")
+//    println("\n Reversed only vowels : $rov")
+
+    val result: List<Int> = InterviewQuestions.evenNumbersThenOddNumbers(listOf(4, 5, 6, 1, 2, 3))
+    print("\nEven numbers then odd numbers : ")
+    result.forEach {
+        print("$it,")
+    }
+
+/*    val s = Snippet()
     s.testSumList(intElement = 1988, listA = listOf(1, 2, 3), listB = listOf(4, 5, 6))
 
     val p = Pattern.compile("a*b")
@@ -31,32 +47,32 @@ fun main() { //: Unit = runBlocking {
         }
         println()
     }
-    println("\nEND")
+    println("\nEND")*/
 
-//    val myAo = ArithmeticOperator()
-//    myAo.useTimes()
-//    println('h' * 3)
+  /*  val myAo = ArithmeticOperator()
+    myAo.useTimes()
+    println('h' * 3)
 
-//    MyClass().forEachTest()
+    MyClass().forEachTest()
 
-//    myAo.useDiv()
-//    myAo.useRem()
-//    myAo.usePlus()
-//    myAo.useMinus()
+    myAo.useDiv()
+    myAo.useRem()
+    myAo.usePlus()
+    myAo.useMinus()
 
-//    val myPoint = ArithmeticOperator.Point(x = 1, y = 2)
-//    myPoint(param1 = 1988, param2 = "HD") // call 'invoke' function
+    val myPoint = ArithmeticOperator.Point(x = 1, y = 2)
+    myPoint(param1 = 1988, param2 = "HD") // call 'invoke' function
 
-//    val myObj = MyCoroutineTest()
-//    println("main start: ${ Thread.currentThread().name }")
+    val myObj = MyCoroutineTest()
+    println("main start: ${ Thread.currentThread().name }")
 
-    //myObj.myRunBlocking()
-    //myObj.myLaunch()
-    //myObj.myLaunchV2()
-    //myObj.myLaunchV3()
-//    myObj.myAsync()
+    myObj.myRunBlocking()
+    myObj.myLaunch()
+    myObj.myLaunchV2()
+    myObj.myLaunchV3()
+    myObj.myAsync()
 
-//    println("main end: ${ Thread.currentThread().name }")
+    println("main end: ${ Thread.currentThread().name }")*/
 }
 
 fun fooBar(amount: Double): String {
