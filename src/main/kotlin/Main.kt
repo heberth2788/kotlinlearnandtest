@@ -18,7 +18,7 @@ fun main() { //: Unit = runBlocking {
 //    println("\n Reversed only vowels : $rov")
 
     val listOfNummbers: List<Int> = listOf(4, 5, 6, 1, 2, 3)
-    print("\nListo of numbers : ")
+    print("\nLista of numbers : ")
     listOfNummbers.forEach {
         print("$it,")
     }
