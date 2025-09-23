@@ -99,10 +99,10 @@ object InterviewQuestions {
         val result = StringBuilder()
         var pivotInt = 0
 
-        str.forEach fe@ { char ->
+        str.forEach { char ->
             if (char in vowelsString ) {
                 result.append(vowelsInStr[pivotInt++])
-                return@fe
+                return@forEach
             }
             result.append(char)
         }
@@ -117,7 +117,7 @@ object InterviewQuestions {
      *      input: [4,5,6,1,2,3]    , output: [4,6,2,5,1,3]
      *                              , output: [2,4,6,1,3,5] (in order)
      */
-    fun evenNumbersThenOddNumbers(numbers: List<Int>): List<Int> {
+    fun evenNumbersThenOddNumbersV1(numbers: List<Int>): List<Int> {
 
         if (numbers.isEmpty()) return emptyList()
 
@@ -132,6 +132,32 @@ object InterviewQuestions {
 //        return evenNumbers + oddNumbers
         return evenNumbers.sorted() + oddNumbers.sorted()
     }
+
+    fun evenNumbersThenOddNumbersV2(numbers: List<Int>): List<Int> {
+        if (numbers.isEmpty()) return emptyList()
+
+        val mutListAux: MutableList<Int> = numbers.toMutableList()
+        var lastOddIndex: Int = -1
+        var pivotValue: Int = 0
+
+        mutListAux.forEachIndexed { index, value ->
+
+            if (value.isEven() && lastOddIndex != -1) {
+                pivotValue = mutListAux[lastOddIndex]
+                mutListAux[lastOddIndex] = value
+                mutListAux[index] = pivotValue
+
+                lastOddIndex++
+                return@forEachIndexed
+            }
+            else if (value.isEven().not() && lastOddIndex == -1) {
+                lastOddIndex = index
+            }
+        }
+        return mutListAux.toList()
+    }
+
+    fun Int.isEven(): Boolean = (this.mod(2) == 0)
 
     /**
      * Fibonacci algorithms comparison

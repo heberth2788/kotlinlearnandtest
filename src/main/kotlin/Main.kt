@@ -18,11 +18,17 @@ fun main() { //: Unit = runBlocking {
 //    val rov: String = InterviewQuestions.reserverOnlyVowelsV2("androIde")
 //    println("\n Reversed only vowels : $rov")
 
-    val result: List<Int> = InterviewQuestions.evenNumbersThenOddNumbers(listOf(4, 5, 6, 1, 2, 3))
+    val listOfNummbers: List<Int> = listOf(4, 5, 6, 1, 2, 3)
+    print("\nListo of numbers : ")
+    listOfNummbers.forEach {
+        print("$it,")
+    }
+    val result: List<Int> = InterviewQuestions.evenNumbersThenOddNumbersV2(listOfNummbers)
     print("\nEven numbers then odd numbers : ")
     result.forEach {
         print("$it,")
     }
+    println()
 
 /*    val s = Snippet()
     s.testSumList(intElement = 1988, listA = listOf(1, 2, 3), listB = listOf(4, 5, 6))
