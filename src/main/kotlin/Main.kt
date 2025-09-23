@@ -3,7 +3,6 @@ package com.bbs
 import com.bbs.assessment.InterviewQuestions
 import com.bbs.assessment.MyEnumClass
 import kotlinx.coroutines.delay
-import java.util.regex.Pattern
 
 //TIP Press <shortcut raw="SHIFT"/> twice to open the Search Everywhere dialog and type <b>show whitespaces</b>,
 // then press <shortcut raw="ENTER"/>. You can now see whitespace characters in your code.
@@ -18,11 +17,17 @@ fun main() { //: Unit = runBlocking {
 //    val rov: String = InterviewQuestions.reserverOnlyVowelsV2("androIde")
 //    println("\n Reversed only vowels : $rov")
 
-    val result: List<Int> = InterviewQuestions.evenNumbersThenOddNumbers(listOf(4, 5, 6, 1, 2, 3))
+    val listOfNummbers: List<Int> = listOf(4, 5, 6, 1, 2, 3)
+    print("\nListo of numbers : ")
+    listOfNummbers.forEach {
+        print("$it,")
+    }
+    val result: List<Int> = InterviewQuestions.evenNumbersThenOddNumbersV2(listOfNummbers)
     print("\nEven numbers then odd numbers : ")
     result.forEach {
         print("$it,")
     }
+    println()
 
 /*    val s = Snippet()
     s.testSumList(intElement = 1988, listA = listOf(1, 2, 3), listB = listOf(4, 5, 6))
