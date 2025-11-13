@@ -49,6 +49,7 @@ class Assessment {
         for(y in 1..100) {
             print("$y ")
         }
+        MIN_AMOUNT
     }
 
     /**

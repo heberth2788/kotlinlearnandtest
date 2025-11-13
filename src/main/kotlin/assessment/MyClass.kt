@@ -1,5 +1,8 @@
 package com.bbs.assessment
 
+internal val MIN_AMOUNT: Double
+    get() = 0.01
+
 abstract class MyArray<T: Number> {
     private var elements: Array<Any?> = arrayOfNulls(DEFAULT_CAPACITY)
     private var index = 0

@@ -49,6 +49,8 @@ enum class MyEnumClass(
 
     lateinit var comment: String
 
+    val description: String = "THIS_IS_COMMON_TO_ALL"
+
     fun calcAge(): Int {
         return Year.now().value - birthYear
     }
@@ -62,4 +64,6 @@ fun testMyEnumClass() {
     joicy.name
     joicy.ordinal
     MyEnumClass.entries
+
+    joicy.description
 }
